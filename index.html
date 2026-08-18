@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber Escape Room</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Glow Effects */
+        .glow-box {
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+        }
+
+        .glow-success {
+            box-shadow: 0 0 30px rgba(74, 222, 128, 0.4);
+        }
+
+        .glow-error {
+            box-shadow: 0 0 30px rgba(248, 113, 113, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main Room Container -->
+    <div class="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-6 glow-box text-center">
+
+        <!-- Title -->
+        <h1 id="title"
+            class="text-2xl font-black text-sky-400 tracking-wider uppercase mb-2">
+            CYBER ESCAPE: NEON DUNGEON
+        </h1>
+
+        <p class="text-xs text-slate-400 mb-6">
+            Enter passcode to override security door lock
+        </p>
+
+        <!-- Display Screen -->
+        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 mb-6">
+
+            <div id="passcode-display"
+                class="text-3xl font-mono tracking-widest text-slate-500 h-10 flex items-center justify-center">
+                ----
+            </div>
+
+            <!-- Status UI -->
+            <div id="status-message"
+                class="text-xs font-semibold text-slate-400 mt-2 uppercase tracking-wide">
+                SYSTEM LOCKED
+            </div>
+
+        </div>
+
+        <!-- Keypad -->
+        <div class="grid grid-cols-3 gap-3 mb-6">
+
+            <button onclick="pressNum('1')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                1
+            </button>
+
+            <button onclick="pressNum('2')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                2
+            </button>
+
+            <button onclick="pressNum('3')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                3
+            </button>
+
+            <button onclick="pressNum('4')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                4
+            </button>
+
+            <button onclick="pressNum('5')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                5
+            </button>
+
+            <button onclick="pressNum('6')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                6
+            </button>
+
+            <button onclick="pressNum('7')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                7
+            </button>
+
+            <button onclick="pressNum('8')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                8
+            </button>
+
+            <button onclick="pressNum('9')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                9
+            </button>
+
+            <button onclick="clearInput()"
+                class="bg-rose-950 text-rose-300 hover:bg-rose-900 py-3 rounded-lg font-bold text-sm">
+                CLR
+            </button>
+
+            <button onclick="pressNum('0')"
+                class="bg-slate-800 hover:bg-slate-700 py-3 rounded-lg text-lg font-bold">
+                0
+            </button>
+
+            <button onclick="submitCode()"
+                class="bg-sky-600 text-white hover:bg-sky-500 py-3 rounded-lg font-bold text-sm">
+                ENT
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
