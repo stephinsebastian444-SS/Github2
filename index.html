@@ -1,0 +1,48 @@
+<script>
+    const SECRET_CODE = "4040";
+    let currentInput = "";
+
+    function pressNum(num) {
+        if (currentInput.length < 4) {
+            currentInput += num;
+            updateDisplay();
+        }
+    }
+
+    function clearInput() {
+        currentInput = "";
+
+        document.getElementById("status-message").innerText =
+            "SYSTEM LOCKED";
+
+        document.getElementById("status-message").className =
+            "text-xs font-semibold text-slate-400 mt-2 uppercase tracking-wide";
+
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        const display = document.getElementById("passcode-display");
+
+        display.innerText = currentInput.padEnd(4, "-");
+
+        display.classList.remove("text-slate-500");
+        display.classList.add("text-sky-400");
+    }
+
+    function submitCode() {
+        const status = document.getElementById("status-message");
+
+        if (currentInput === SECRET_CODE) {
+            status.innerText = "ACCESS GRANTED - DOOR UNLOCKED!";
+
+            status.className =
+                "text-xs font-bold text-emerald-400 mt-2 uppercase tracking-wide";
+        } else {
+            status.innerText = "INVALID PASSCODE - ACCESS DENIED";
+
+            status.className =
+                "text-xs font-bold text-rose-400 mt-2 uppercase tracking-wide";
+        }
+    }
+</script>
